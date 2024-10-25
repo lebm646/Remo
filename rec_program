@@ -40,10 +40,15 @@ while True:
         search(db)
         continue
     elif again == 'n':
-        print('''
-            Thank you for using our service!
-            Have a great day! ^^
-''')
+        print("""
+    ________________________________\n
+    *                              *\n
+    * -------- THANK YOU --------- *\n
+    * ---FOR USING OUR SERVICE!--- *\n
+    *                              *\n
+    *______________________________*\n
+    """
+)
         break
     else:
         print('Invalid input! Please try again!')
