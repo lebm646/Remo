@@ -1,0 +1,44 @@
+from database import db
+from movie_dict import genre_list
+
+print("""
+    _______________________________\n
+    *                             *\n
+    *                             *\n
+    * ----- WELCOME TO REMO ----- *\n
+    *                             *\n
+    *_____________________________*\n
+    """
+)
+
+print("we have these following genres:")
+for genre in genre_list:
+    print(genre)
+def search(db):
+    user_input = input("Enter genres (comma-separated) to find movies: ").title()
+    results = db.get_movies_by_genre(user_input)
+    
+    if results:
+        print("\nMovies found:")
+        for movie in results:
+            print(movie)
+    else:
+        print("No movies found for the specified genres.")
+    
+search(db)
+
+while True:
+    again = input('Would you like to search again? Enter y/n: ')
+    if again == 'y':
+        search(db)
+        continue
+    elif again == 'n':
+        print('''
+            Thank you for using our service!
+            Have a great day! ^^
+''')
+        break
+    else:
+        print('Invalid input! Please try again!')
+        continue
+    

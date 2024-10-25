@@ -7,8 +7,10 @@ class Movie:
 
     def __repr__(self):
         return (
+        '\n'
         f"{self.title}\n"
         f"Genre: {', '.join(self.genres)}\n"
         f"Duration: {self.duration} min\n"
         f"Rating: {self.rating}/10"
+        '\n'
     )
