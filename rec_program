@@ -1,4 +1,5 @@
 from database import db
+from database import Database
 from movie_dict import genre_list
 
 print("""
@@ -11,25 +12,31 @@ print("""
     """
 )
 
-print("we have these following genres:")
-for genre in genre_list:
-    print(genre)
+print('You can seach for movies with certain genres')
+print("We have these following genres:")
+def print_genres():
+    for genre in genre_list:
+        print(genre)
+print_genres()
 def search(db):
     user_input = input("Enter genres (comma-separated) to find movies: ").title()
-    results = db.get_movies_by_genre(user_input)
+    results = db.get_movie_by_genres(user_input)
     
     if results:
         print("\nMovies found:")
         for movie in results:
             print(movie)
     else:
-        print("No movies found for the specified genres.")
+        print("Sorry! No movies found for the specified genres.")
     
 search(db)
 
 while True:
     again = input('Would you like to search again? Enter y/n: ')
     if again == 'y':
+        print_genre = input('Would you like to see genre list again? Enter y/n: ')
+        if print_genre == 'y':
+            print_genres()
         search(db)
         continue
     elif again == 'n':
@@ -41,4 +48,3 @@ while True:
     else:
         print('Invalid input! Please try again!')
         continue
-    

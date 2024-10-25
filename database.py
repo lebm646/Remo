@@ -20,5 +20,4 @@ class Database:
     
 
 db = Database(movie_dict)
-for movie in db.movies:
-    print(movie)
+
