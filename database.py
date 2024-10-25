@@ -1,10 +1,10 @@
 from movie import Movie
-from movie import movies
+from movie_dict import movie_dict
 
 class Database:
     def __init__(self, movie_dict):
         self.movies = []
-        for movie_data in movies_dict:
+        for movie_data in movie_dict:
             movie = Movie(movie_data['title'], movie_data['genres'], movie_data['duration'], movie_data['rating'])
             self.movies.append(movie)
         
@@ -18,3 +18,7 @@ class Database:
         return [movie for movie in self.movies 
                 if all(genre in movie.genres for genre in genres)]
     
+
+db = Database(movie_dict)
+for movie in db.movies:
+    print(movie)
