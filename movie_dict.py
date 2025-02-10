@@ -18,7 +18,13 @@ movie_dict = [
     {"title": "Avengers: Endgame", "genres": ["Action", "Adventure", "Sci-Fi"], "duration": 181, "rating": 8.4},
     {"title": "Schindler's List", "genres": ["Biography", "Drama", "History"], "duration": 195, "rating": 9.0},
     {"title": "Whiplash", "genres": ["Drama", "Music"], "duration": 107, "rating": 8.5},
-    {"title": "Toy Story", "genres": ["Animation", "Adventure", "Comedy"], "duration": 81, "rating": 8.3}
+    {"title": "Toy Story", "genres": ["Animation", "Adventure", "Comedy"], "duration": 81, "rating": 8.3},
+    {"title": "The Lion King", "genres": ["Animation", "Adventure", "Drama"], "duration": 88, "rating": 8.5},
+    {"title": "Finding Nemo", "genres": ["Animation", "Adventure", "Comedy"], "duration": 100, "rating": 8.2},
+    {"title": "Up", "genres": ["Animation", "Adventure", "Comedy"], "duration": 96, "rating": 8.3},
+    {"title": "Crazy Rich Asians", "genres": ["Comedy", "Romance"], "duration": 120, "rating": 6.9},
+    {"title": "How to Lose a Guy in 10 Days", "genres": ["Comedy", "Romance"], "duration": 116, "rating": 6.4}
+
 ]
 
 genre_list = [
@@ -27,4 +33,3 @@ genre_list = [
     'Romance', 'Comedy', 'Animation', 'Family', 'Biography', 'History', 
     'Music'
 ]
-genre_list.sort()

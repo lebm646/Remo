@@ -12,15 +12,30 @@ print("""
     """
 )
 
-print('You can seach for movies with certain genres')
-print("We have these following genres:")
+# print out all the genres that are available
 def print_genres():
+    print('You can seach for movies with certain genres')
+    print("We have these following genres:")
     for genre in genre_list:
         print(genre)
-print_genres()
+
+# take in one or more genres and search for movies that fit all the genre
 def search(db):
-    user_input = input("Enter genres (comma-separated) to find movies: ").title()
-    results = db.get_movie_by_genres(user_input)
+    category = input("Would you like to search by genre, rating or by duration? Enter 'g' for genre, 'r' for rating, and 'd' for duration: ")
+
+    if category == 'g': # genre
+        print_genres()
+        user_input = input("Enter genres (comma-separated) to find movies: ").title()
+        results = db.get_movie_by_genres(user_input)
+
+    elif category == 'd': # duration
+        min_duration = input("Enter the minimum duration you want in minutes: ")
+        max_duration = input("Enter the maximum duration you want in minutes: ")
+        results = db.get_movies_by_duration(float(min_duration), float(max_duration))
+
+    elif category == 'r': # rating
+        min_rating = input("Enter the minimum rating you want: ")
+        results = db.get_movies_by_rating(min_rating)
     
     if results:
         print("\nMovies found:")
@@ -34,11 +49,9 @@ search(db)
 while True:
     again = input('Would you like to search again? Enter y/n: ')
     if again == 'y':
-        print_genre = input('Would you like to see genre list again? Enter y/n: ')
-        if print_genre == 'y':
-            print_genres()
         search(db)
         continue
+
     elif again == 'n':
         print("""
     ________________________________\n
