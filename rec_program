@@ -35,7 +35,7 @@ def search(db):
 
     elif category == 'r': # rating
         min_rating = input("Enter the minimum rating you want: ")
-        results = db.get_movies_by_rating(min_rating)
+        results = db.get_movies_by_rating(int(min_rating))
     
     if results:
         print("\nMovies found:")
