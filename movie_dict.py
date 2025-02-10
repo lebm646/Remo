@@ -75,6 +75,9 @@ movie_dict = [
     {"title": "The Martian", "genres": ["Adventure", "Drama", "Sci-Fi"], "duration": 144, "rating": 8.0},
     {"title": "The Babadook", "genres": ["Drama", "Horror", "Thriller"], "duration": 94, "rating": 6.8},
     {"title": "Midsommar", "genres": ["Drama", "Horror", "Mystery"], "duration": 148, "rating": 7.1},
+    {"title": "The Witch", "genres": ["Drama", "Fantasy", "Horror"], "duration": 92, "rating": 6.9},
+    {"title": "It Follows", "genres": ["Horror", "Mystery", "Thriller"], "duration": 100, "rating": 6.8},
+    {"title": "Sinister", "genres": ["Horror", "Mystery", "Thriller"], "duration": 110, "rating": 6.8},
     {"title": "The Hangover", "genres": ["Comedy"], "duration": 100, "rating": 7.7},
     {"title": "Superbad", "genres": ["Comedy"], "duration": 113, "rating": 7.6},
     {"title": "Step Brothers", "genres": ["Comedy"], "duration": 98, "rating": 6.9},
@@ -89,15 +92,15 @@ movie_dict = [
     {"title": "American Psycho", "genres": ["Crime", "Drama", "Horror"], "duration": 102, "rating": 7.6},
     {"title": "Oldboy", "genres": ["Action", "Drama", "Mystery"], "duration": 120, "rating": 8.3},
     {"title": "Prisoners", "genres": ["Crime", "Drama", "Mystery"], "duration": 153, "rating": 8.1},
-    {"title": "Nightcrawler", "genres": ["Crime", "Drama", "Thriller"], "duration": 117, "rating": 7.8}
+    {"title": "Nightcrawler", "genres": ["Crime", "Drama", "Thriller"], "duration": 117, "rating": 7.8},
+    {"title": "Zootopia", "genres": ["Animation", "Adventure", "Comedy"], "duration": 108, "rating": 8.0},
+    {"title": "Ratatouille", "genres": ["Animation", "Adventure", "Comedy"], "duration": 111, "rating": 8.0},
+    {"title": "Big Hero 6", "genres": ["Animation", "Action", "Adventure"], "duration": 102, "rating": 7.8},
+    {"title": "Inside Out", "genres": ["Animation", "Adventure", "Comedy"], "duration": 95, "rating": 8.1},
+    {"title": "Moana", "genres": ["Animation", "Adventure", "Comedy"], "duration": 107, "rating": 7.6}
+    ]
 
 
-]
-
-
-genre_list = [
-    'Action', 
-    'Sci-Fi', 'Thriller', 'Drama', 'Crime', 'Adventure', 
-    'Romance', 'Comedy', 'Animation', 'Family', 'Biography', 'Horror', 'History', 
-    'Music', 'Mystery'
-]
+genre_list = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Drama',  
+ 'Family', 'Fantasy', 'History', 'Horror', 'Music', 'Mystery', 'Romance',  
+ 'Sci-Fi', 'Thriller', 'War']
