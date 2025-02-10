@@ -1,0 +1,52 @@
+# print out menu option
+def cli_menu():
+    print("1. Search movies by genre")
+    print("2. Search by rating")
+    print("3. Search by duration")
+    print("4. Exit")
+
+    choice = input("Enter option: ")
+    return choice
+
+
+# print out all the genres that are available
+def print_genres():
+    print('You can seach for movies with certain genres')
+    print("We have these following genres:")
+    for genre in genre_list:
+        print(genre)
+
+# take in one or more genres and search for movies that fit all the genre
+def search_by_genre():
+    print_genres()
+    genres = input("Enter genres (comma-separated) to find movies: ")
+
+    genres = [genre.strip().lower() for genre in genres.split(",")]
+
+    results = [movie for movie in self.movies 
+            if all(genre in map(str.lower, movie.genres) for genre in genres)]
+
+# take in min and max duration and find movies based on that info
+def search_by_duration():
+    min_duration = input("Enter the minimum duration you want in minutes: ")
+    max_duration = input("Enter the maximum duration you want in minutes: ")
+
+    results = [movie for movie in self.movies if min_duration <= movie.duration <= max_duration]
+
+# find movies with same or higher input rating
+def search_by_rating():
+    min_rating = input("Enter the minimum rating you want: ")
+    results = [movie for movie in self.movies if movie.rating >= min_rating]
+
+# take in a list of found movies and print out 
+def print_result(results):
+    if results:
+        print("\nMovies found:")
+        for movie in results:
+            print(movie)
+    else:
+        print("Sorry! No movies found for the specified genres.")
+
+        
+
+        
