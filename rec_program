@@ -1,7 +1,9 @@
 from database import db
-from database import Database
 from movie_dict import genre_list
+import rec_algo
 
+
+# welcome text
 print("""
     _______________________________\n
     *                             *\n
@@ -12,57 +14,39 @@ print("""
     """
 )
 
-# print out all the genres that are available
-def print_genres():
-    print('You can seach for movies with certain genres')
-    print("We have these following genres:")
-    for genre in genre_list:
-        print(genre)
-
-# take in one or more genres and search for movies that fit all the genre
-def search(db):
-    category = input("Would you like to search by genre, rating or by duration? Enter 'g' for genre, 'r' for rating, and 'd' for duration: ")
-
-    if category == 'g': # genre
-        print_genres()
-        user_input = input("Enter genres (comma-separated) to find movies: ").title()
-        results = db.get_movie_by_genres(user_input)
-
-    elif category == 'd': # duration
-        min_duration = input("Enter the minimum duration you want in minutes: ")
-        max_duration = input("Enter the maximum duration you want in minutes: ")
-        results = db.get_movies_by_duration(float(min_duration), float(max_duration))
-
-    elif category == 'r': # rating
-        min_rating = input("Enter the minimum rating you want: ")
-        results = db.get_movies_by_rating(int(min_rating))
-    
-    if results:
-        print("\nMovies found:")
-        for movie in results:
-            print(movie)
-    else:
-        print("Sorry! No movies found for the specified genres.")
-    
-search(db)
 
 while True:
-    again = input('Would you like to search again? Enter y/n: ')
-    if again == 'y':
-        search(db)
-        continue
+    option = rec_algo.cli_menu()
 
-    elif again == 'n':
+    # exit
+    if option == '4':
         print("""
-    ________________________________\n
-    *                              *\n
-    * -------- THANK YOU --------- *\n
-    * ---FOR USING OUR SERVICE!--- *\n
-    *                              *\n
-    *______________________________*\n
-    """
-)
+        ________________________________\n
+        *                              *\n
+        * -------- THANK YOU --------- *\n
+        * ---FOR USING OUR SERVICE!--- *\n
+        *                              *\n
+        *______________________________*\n
+        """
+        )
         break
+
+    # search by genres
+    elif option == '1':
+        results = rec_algo.search_by_genre()
+        rec_algo.print_results(results)
+    
+    # search by rating
+    elif option == '2':
+        results = rec_algo.search_by_rating()
+        rec_algo.print_results(results)
+    
+    # search by duration
+    elif option == '3':
+        results = rec_algo.search_by_duration()
+        rec_algo.print_results(results)
+
+    # invalid input 
     else:
         print('Invalid input! Please try again!')
         continue
