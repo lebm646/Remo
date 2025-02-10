@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache files
+*.cache/
+*.pytest_cache/
+
+# Dependency files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Data files
+*.csv
+*.json
+*.xml
+*.pickle
+
+# Git-specific files
+*.orig
